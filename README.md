@@ -17,7 +17,7 @@ How To:
 - Then terraform apply
 - After the terraform complete, just export the kubeconfig
 ```
-    expot KUBECONFIG=~/kind/config
+    export KUBECONFIG=~/kind/config
 ```
 
 This will bring up a cluster with the following specs:
