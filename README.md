@@ -22,5 +22,5 @@ This will bring up a cluster with the following specs:
 - Ingress Nginx with already configure to loadbalancer with the ip provided from metalLB.
 
 Todo:
-- Get the ip to configInline.address-pools[0].addresses[0] dynamic.
-- More Helm applications with the option to enable and disable.
+- [x] Get the ip to configInline.address-pools[0].addresses[0] dynamic.
+- [ ] More Helm applications with the option to enable and disable.
