@@ -3,9 +3,10 @@
 A bootstrap to bring up a lab environment for playing and testing kubernetes.
 
 What's needed?
-- For now the only supported CRI is Docker
 - Terraform installed
 - Helm installed
+- Docker installed
+- Kubectl
 
 How To:
 - Git clone this repo 
@@ -14,6 +15,10 @@ How To:
 ```
 - Run terraform init
 - Then terraform apply
+- After the terraform complete, just export the kubeconfig
+```
+    expot KUBECONFIG=~/kind/config
+```
 
 This will bring up a cluster with the following specs:
 - Control Plane
