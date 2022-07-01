@@ -1,6 +1,7 @@
 resource "helm_release" "metallb" {
   depends_on = [
-    kind_cluster.default
+    kind_cluster.default,
+    data.local_file.input
   ]
 
   name = "metallb"
@@ -13,7 +14,7 @@ resource "helm_release" "metallb" {
 
   set {
     name  = "configInline.address-pools[0].addresses[0]"
-    value = "172.18.0.100/32"
+    value = data.local_file.input.content
   }
   set {
     name  = "configInline.address-pools[0].name"
