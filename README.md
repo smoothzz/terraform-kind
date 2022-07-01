@@ -8,9 +8,10 @@ What's needed?
 - Helm installed
 
 How To:
-- Git clone this repo ```
+- Git clone this repo 
+```
     git clone git@github.com:smoothzz/terraform-kind.git
-    ```    
+```
 - Run terraform init
 - The terraform apply
 
