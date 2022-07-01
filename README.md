@@ -13,7 +13,7 @@ How To:
     git clone git@github.com:smoothzz/terraform-kind.git
 ```
 - Run terraform init
-- The terraform apply
+- Then terraform apply
 
 This will bring up a cluster with the following specs:
 - Control Plane
