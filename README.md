@@ -14,6 +14,7 @@ How To:
     git clone git@github.com:smoothzz/terraform-kind.git
 ```
 - Run terraform init
+- You can edit the file terraform.tfvars to enable or disable extra helms, just set it to false or true.
 - Then terraform apply
 - After the terraform complete, just export the kubeconfig
 ```
