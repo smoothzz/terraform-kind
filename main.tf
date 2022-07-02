@@ -9,7 +9,6 @@ locals {
 resource "kind_cluster" "default" {
   name            = "cluster-${random_id.instance_id.hex}"
   wait_for_ready  = true
-  node_image      = "kindest/node:v1.21.10"
   kubeconfig_path = local.k8s_config_path
 
   kind_config {

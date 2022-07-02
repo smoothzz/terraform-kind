@@ -89,3 +89,27 @@ resource "helm_release" "ingress-nginx" {
     value = "true"
   }
 }
+
+
+resource "helm_release" "metrics" {
+  depends_on = [
+    kind_cluster.default
+  ]
+
+  name = "metrics-server"
+
+  repository = "https://charts.bitnami.com/bitnami"
+  chart      = "metrics-server"
+  wait       = true
+  namespace  = "kube-system"
+
+  set {
+    name  = "extraArgs"
+    value = "- --kubelet-insecure-tls"
+  }
+
+  set {
+    name = "apiService.create"
+    value = "true"
+  }
+}
