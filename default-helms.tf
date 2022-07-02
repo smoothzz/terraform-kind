@@ -109,7 +109,7 @@ resource "helm_release" "metrics" {
   }
 
   set {
-    name = "apiService.create"
+    name  = "apiService.create"
     value = "true"
   }
 }
