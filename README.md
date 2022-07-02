@@ -25,8 +25,12 @@ This will bring up a cluster with the following specs:
 - Control Plane
 - Work Node
 - MetalLB
-- Ingress Nginx with already configure to loadbalancer with the ip provided from metalLB.
+- Ingress Nginx with already configured loadbalancer with the ip provided from metalLB.
 
 Todo:
 - [x] Get the ip to configInline.address-pools[0].addresses[0] dynamic.
-- [ ] More Helm applications with the option to enable and disable.
+- [x] More Helm applications with the option to enable and disable.
+    - [x] cert-manager
+    - [x] keda
+    - [x] prometheus-stack (monitoring tool)
+    - If ya have any app to include just open a pr or suggest it in the issues.
