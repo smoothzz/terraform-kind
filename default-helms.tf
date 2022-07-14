@@ -11,6 +11,7 @@ resource "helm_release" "metallb" {
   create_namespace = true
   namespace        = "metallb-system"
   wait             = true
+  version = "v0.12.1"
 
   set {
     name  = "configInline.address-pools[0].addresses[0]"
