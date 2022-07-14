@@ -18,9 +18,13 @@ How To use:
 - Run terraform init
 - You can pass variables to enable or disable extra helms, just set it to false or true.
 ```
+module "terraform-kind" {
+    source = "github.com/smoothzz/terraform-kind"
+
     cert-manager = false
-    keda         = false
+    keda         = true
     monitoring   = false
+}
 ```
 - Then terraform apply
 - After the terraform complete, just export the kubeconfig
