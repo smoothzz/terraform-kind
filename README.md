@@ -8,13 +8,20 @@ What's needed?
 - Docker installed
 - Kubectl
 
-How To:
-- Git clone this repo 
+How To use:
+- Just instance the module in a terraform file.
 ```
-    git clone git@github.com:smoothzz/terraform-kind.git
+    module "terrafom-kind" {
+        source = "github.com/smoothzz/terraform-kind"
+    }
 ```
 - Run terraform init
-- You can edit the file terraform.tfvars to enable or disable extra helms, just set it to false or true.
+- You can pass variables to enable or disable extra helms, just set it to false or true.
+```
+    cert-manager = false
+    keda         = false
+    monitoring   = false
+```
 - Then terraform apply
 - After the terraform complete, just export the kubeconfig
 ```
