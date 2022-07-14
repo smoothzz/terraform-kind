@@ -1,7 +1,7 @@
 resource "helm_release" "metallb" {
   depends_on = [
     kind_cluster.default,
-    data.local_file.input
+    data.docker_network.main,
   ]
 
   name = "metallb"
@@ -15,7 +15,7 @@ resource "helm_release" "metallb" {
 
   set {
     name  = "configInline.address-pools[0].addresses[0]"
-    value = data.local_file.input.content
+    value = join("", [substr(tolist(data.docker_network.main.ipam_config)[0].subnet, 0, 9), resource.random_integer.iprange.result,"/32"])
   }
   set {
     name  = "configInline.address-pools[0].name"

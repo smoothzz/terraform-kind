@@ -7,3 +7,4 @@ provider "helm" {
     config_path = "~/kind/config"
   }
 }
+provider "docker" {}

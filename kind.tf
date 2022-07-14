@@ -2,6 +2,14 @@ resource "random_id" "instance_id" {
   byte_length = 3
 }
 
+resource "random_integer" "iprange" {
+  min = 50
+  max = 150
+}
+data "docker_network" "main" {
+  name = "kind"
+}
+
 locals {
   k8s_config_path = pathexpand("~/kind/config")
 }
