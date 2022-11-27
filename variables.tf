@@ -12,3 +12,8 @@ variable "monitoring" {
   default = false
   type    = bool
 }
+
+variable "teste" {
+  type = string
+  default = ""
+}

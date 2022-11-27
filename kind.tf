@@ -6,7 +6,15 @@ resource "random_integer" "iprange" {
   min = 50
   max = 150
 }
+
+resource "docker_network" "private_network" {
+  name = "kind"
+}
+
 data "docker_network" "main" {
+  depends_on = [
+    resource.docker_network.private_network
+  ]
   name = "kind"
 }
 
